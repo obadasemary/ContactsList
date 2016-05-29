@@ -16,6 +16,7 @@
 		AF3E6EF91CFB28D200CF6EAE /* ContactsListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E6EF81CFB28D200CF6EAE /* ContactsListTests.swift */; };
 		AF3E6F041CFB28D200CF6EAE /* ContactsListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E6F031CFB28D200CF6EAE /* ContactsListUITests.swift */; };
 		AF3E6F141CFB34F900CF6EAE /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E6F131CFB34F900CF6EAE /* CoreDataStackManager.swift */; };
+		AF3E6F161CFB478C00CF6EAE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E6F151CFB478C00CF6EAE /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		AF3E6F031CFB28D200CF6EAE /* ContactsListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsListUITests.swift; sourceTree = "<group>"; };
 		AF3E6F051CFB28D200CF6EAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF3E6F131CFB34F900CF6EAE /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
+		AF3E6F151CFB478C00CF6EAE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				AF3E6EEC1CFB28D200CF6EAE /* LaunchScreen.storyboard */,
 				AF3E6EEF1CFB28D200CF6EAE /* Info.plist */,
 				AF3E6EE71CFB28D200CF6EAE /* ContactsList.xcdatamodeld */,
+				AF3E6F151CFB478C00CF6EAE /* HomeViewController.swift */,
 			);
 			path = ContactsList;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF3E6F161CFB478C00CF6EAE /* HomeViewController.swift in Sources */,
 				AF3E6EE31CFB28D200CF6EAE /* ViewController.swift in Sources */,
 				AF3E6F141CFB34F900CF6EAE /* CoreDataStackManager.swift in Sources */,
 				AF3E6EE11CFB28D200CF6EAE /* AppDelegate.swift in Sources */,

@@ -13,7 +13,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var messageLabel: UILabel!
     
+    var globalUser: String?
     var context: NSManagedObjectContext?
     
     override func viewDidLoad() {
@@ -23,7 +25,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func loginAction(sender: AnyObject) {
-        
+        login(usernameTextField.text!, password: passwordTextField.text!)
     }
     
     @IBAction func createAccountAction(sender: AnyObject) {
@@ -45,6 +47,7 @@ class ViewController: UIViewController {
                 self.createUserAccount(usernameField.text!, password: passwordField.text!)
             } else {
                 print("Error must enter username or password")
+                self.messageLabel.text = "Error must enter username or password"
             }
         })
         
@@ -80,6 +83,50 @@ class ViewController: UIViewController {
             print("New Account for \(username) successfully created")
         } catch {
             print("Error Saving to Core Data")
+        }
+    }
+    
+    func login(username: String, password: String) {
+        
+        let request = NSFetchRequest(entityName: "User")
+        request.predicate = NSPredicate(format: "username = %@", username)
+        
+        do {
+            
+            let results = try context!.executeFetchRequest(request)
+            
+            for result in results {
+                print(result.valueForKey("username")!)
+                
+                if let user = result.valueForKey("username") as? String {
+                    let psw = result.valueForKey("password") as? String
+                    
+                    // authenticate user
+                    
+                    if user == username && psw == password {
+                        
+                        print("User successfully authenticated")
+                        globalUser = user
+                        self.performSegueWithIdentifier("goHome", sender: self)
+                        
+                    } else {
+                        print("Wrong username or password")
+                        messageLabel.text = "Wrong username or password"
+                    }
+                }
+            }
+            
+        } catch {
+            print("Error Fetch Request")
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "goHome" {
+            
+            let homeVC = segue.destinationViewController as! HomeViewController
+            homeVC.username = globalUser
         }
     }
 }
