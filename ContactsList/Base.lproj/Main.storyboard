@@ -34,6 +34,9 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" red="0.96165320139999999" green="0.93338484269999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="createAccountAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r7h-2h-FGt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYj-df-Yuf">
                                 <rect key="frame" x="20" y="285" width="560" height="30"/>
@@ -42,7 +45,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="aa3-uX-vh1" kind="show" identifier="goHome" id="YVp-5a-e3U"/>
+                                    <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gvB-m8-ZEd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -63,6 +66,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yfA-nd-XOP"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="etS-La-VvZ" id="rFn-2f-xrM"/>
+                        <outlet property="usernameTextField" destination="oaL-fg-9zo" id="skv-QT-f7c"/>
+                        <segue destination="aa3-uX-vh1" kind="show" identifier="goHome" id="a1t-Qq-08Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
