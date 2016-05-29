@@ -23,6 +23,14 @@ class ViewController: UIViewController {
         
         context = CoreDataStackManager.sharedInstacne().managedObjectContext
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if NSUserDefaults.standardUserDefaults().valueForKey("username") != nil {
+            self.performSegueWithIdentifier("goHome", sender: nil)
+        }
+    }
 
     @IBAction func loginAction(sender: AnyObject) {
         login(usernameTextField.text!, password: passwordTextField.text!)
@@ -107,6 +115,7 @@ class ViewController: UIViewController {
                         
                         print("User successfully authenticated")
                         globalUser = user
+                        NSUserDefaults.standardUserDefaults().setValue(globalUser, forKey: "username")
                         self.performSegueWithIdentifier("goHome", sender: self)
                         
                     } else {

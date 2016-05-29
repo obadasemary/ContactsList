@@ -111,11 +111,20 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etW-aH-taZ">
+                                <rect key="frame" x="273" y="383" width="55" height="30"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logoutAction:" destination="aa3-uX-vh1" eventType="touchUpInside" id="Cu4-cw-NRA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="etW-aH-taZ" firstAttribute="centerX" secondItem="abw-5v-qOx" secondAttribute="centerX" id="5Li-mZ-h3z"/>
                             <constraint firstItem="FEU-vo-sj3" firstAttribute="top" secondItem="Q25-KY-NFD" secondAttribute="bottom" constant="52" id="XJG-LW-KrR"/>
                             <constraint firstItem="FEU-vo-sj3" firstAttribute="centerX" secondItem="abw-5v-qOx" secondAttribute="centerX" id="aiA-wC-bC2"/>
+                            <constraint firstItem="etW-aH-taZ" firstAttribute="top" secondItem="FEU-vo-sj3" secondAttribute="bottom" constant="65" id="gTI-IB-Dcy"/>
                         </constraints>
                     </view>
                     <connections>

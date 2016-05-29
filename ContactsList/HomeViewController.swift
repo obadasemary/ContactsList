@@ -16,6 +16,14 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        greetingsLabel.text = "Welcome! \(username!)"
+//        greetingsLabel.text = "Welcome! \(username!)"
+    }
+    
+    @IBAction func logoutAction(sender: AnyObject) {
+        
+        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "username")
+        
+        let loginViewController = self.storyboard?.instantiateInitialViewController()
+        UIApplication.sharedApplication().keyWindow?.rootViewController = loginViewController
     }
 }
